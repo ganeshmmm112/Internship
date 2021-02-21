@@ -1,0 +1,373 @@
+.topleft {
+  position: absolute;
+  color: white;
+  top: 50px;
+  left: 16px;
+  font-size: 100px;
+  text-align: center;
+}
+
+/***
+-----------------------------
+---------
+------------------------------
+****/
+body {
+	display:flex;
+  flex-direction: column;
+  background-color:#201515;
+  
+  position:relative;
+}
+  body:after {
+    content: "";
+    background:   url(http://www.transparenttextures.com/patterns/dust.png) repeat center center;
+    opacity: 0.07;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+
+    z-index: 100;  
+    pointer-events:none;
+  }
+
+.angle {
+  cursor:pointer;
+	width: 100%;
+	height: 1000px;
+  margin-bottom: -400px;
+  padding:0;
+  background-color:#201515;
+  background-size:cover, auto;
+  background-attachment:fixed;  
+  background-position: center center;
+  -webkit-clip-path: polygon(50% 25%, 100% 0%, 100% 50%, 50% 75%, 0% 100%, 0% 50%);
+          clip-path: polygon(50% 25%, 100% 0%, 100% 50%, 50% 75%, 0% 100%, 0% 50%);
+  transition:all .7s ease-in-out;
+  background-blend-mode: lighten;
+  
+}
+.angle.first{
+    -webkit-clip-path: polygon(50% 0%, 100% 0%, 100% 50%, 50% 75%, 0% 100%, 0% 0%);
+            clip-path: polygon(50% 0%, 100% 0%, 100% 50%, 50% 75%, 0% 100%, 0% 0%);
+  }
+  .angle.last{
+    -webkit-clip-path: polygon(50% 25%, 100% 0%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
+            clip-path: polygon(50% 25%, 100% 0%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
+  }
+  .angle:hover{
+   background-color:#000;
+  }
+
+
+.arrow{
+    -webkit-clip-path: polygon(50% 25%, 100% 50%, 100% 100%, 50% 75%, 0% 100%, 0% 50%);
+            clip-path: polygon(50% 25%, 100% 50%, 100% 100%, 50% 75%, 0% 100%, 0% 50%);
+  
+          }
+  .arrow.first{
+    -webkit-clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 75%, 0% 100%, 0% 0%);
+            clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 75%, 0% 100%, 0% 0%);
+  }
+  .arrow.last{
+    -webkit-clip-path: polygon(50% 25%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
+            clip-path: polygon(50% 25%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
+  }
+
+.one{
+  background-image: url(https://takenote.co/wp-content/uploads/2019/12/Best%20headphones%20for%20transcription.png);
+  
+}
+.two{
+  background-image: url(https://images.pexels.com/photos/7434/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+}
+
+.three{
+  background-image: url(https://images.pexels.com/photos/3756774/pexels-photo-3756774.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+}
+.four{
+  background-image: url(https://images.pexels.com/photos/3757008/pexels-photo-3757008.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+}
+.five{
+  background-image: url(https://images.pexels.com/photos/3757030/pexels-photo-3757030.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+}
+.six{
+  background-image: url(https://images.pexels.com/photos/1490844/pexels-photo-1490844.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+}
+
+
+
+/*
+-----------------------
+-------------------------------------------
+-----------------------
+*/
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:700);
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	background-color: #000;
+}
+
+
+
+
+.wrapper {
+	width: 40%;
+	margin: 40px auto;
+}
+
+div.gallery {
+	margin-top: 50px;
+}
+
+div.gallery ul {
+	list-style-type: none;
+	margin-left: 35px;
+}
+
+/* animation */
+div.gallery ul li, div.gallery li img {
+	-webkit-transition: all 0.1s ease-in-out;
+  	-moz-transition: all 0.1s ease-in-out;
+  	-o-transition: all 0.1s ease-in-out;
+  	transition: all 0.1s ease-in-out;
+}
+
+div.gallery ul li {
+	position: relative;
+	float: left;
+	width: 130px;
+	height: 130px;
+	margin: 5px;
+	padding: 5px;
+	z-index: 0;
+}
+
+/* Make sure z-index is higher on hover */
+/* Ensure that hover image overlapped the others */
+div.gallery ul li:hover {
+	z-index: 5;
+}
+
+/* Image is position nicely under li */
+div.gallery ul li img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: 1px solid #dddddd;
+	padding: 5px;
+	width: 130px;
+	height: 130px;
+	background: #f0f0f0;
+}
+
+div.gallery ul li img:hover {
+	width: 200px;
+	height: 200px;
+	margin-top: -130px;
+	margin-left: -130px;
+	top: 65%;
+	left: 65%;
+}
+
+p.attribution {
+	font-family: 'Consolas';
+	color: #000;
+	clear: both;
+	text-align: center;
+	line-height: 25px;
+	padding-top: 30px;
+}
+
+p.attribution a {
+	color: #4c8d7c;
+}
+
+/* Responsive hack */
+@media only screen and (min-width: 499px) and (max-width: 1212px) {
+	.wrapper {
+		width: 500px;
+	}
+}
+
+@media only screen and (max-width: 498px) {
+	.wrapper {
+		width: 300px;
+	}
+
+	div.gallery ul {
+		list-style-type: none;
+		margin: 0;
+	}
+}
+
+/*-------------------------
+--------------------------------
+---------------------------*/
+.container {
+  display: flex;
+  width: 100%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.box {
+  flex: 1;
+  overflow: hidden;
+  transition: 0.5s;
+  margin: 0 2%;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  line-height: 0;
+}
+
+.box > img {
+  width: 200%;
+  height: calc(100% - 10vh);
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.5s;
+}
+
+.box > span {
+  font-size: 3.8vh;
+  display: block;
+  text-align: center;
+  height: 10vh;
+  line-height: 2.6;
+}
+
+.box:hover {
+  flex: 1 1 50%;
+}
+
+.box:hover > img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/*---------------------------
+--------------------------------
+------------------------------*/
+a {
+  color: #6c757d;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+::selection {
+  background: #fff;
+  text-shadow: none;
+}
+
+footer {
+  padding: 2rem 0;
+  background-color: #212529;
+}
+
+.footer-column:not(:first-child) {
+  padding-top: 2rem;
+}
+@media (min-width: 768px) {
+  .footer-column:not(:first-child) {
+    padding-top: 0rem;
+  }
+}
+
+.footer-column {
+  text-align: center;
+}
+.footer-column .nav-item .nav-link {
+  padding: 0.1rem 0;
+}
+.footer-column .nav-item span.nav-link {
+  color: #6c757d;
+}
+.footer-column .nav-item span.footer-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+}
+.footer-column .nav-item .fas {
+  margin-right: 0.5rem;
+}
+.footer-column ul {
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  .footer-column ul {
+    text-align: left;
+  }
+}
+
+ul.social-buttons {
+  margin-bottom: 0;
+}
+
+ul.social-buttons li a:active,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:hover {
+  background-color: #fff;
+  color:black
+}
+
+ul.social-buttons li a {
+  font-size: 20px;
+  line-height: 40px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #fff;
+  border-radius: 100%;
+  outline: 0;
+  background-color: #1a1d20;
+}
+
+footer .quick-links {
+  font-size: 90%;
+  line-height: 40px;
+  margin-bottom: 0;
+  text-transform: none;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.copyright {
+  color: #6c757d;
+}
+
+.fa-ellipsis-h {
+  color: white;
+  padding: 2rem 0;
+}
